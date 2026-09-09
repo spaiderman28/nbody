@@ -24,5 +24,11 @@ public class Planet {
         myFileName = p.myFileName;
     }
 
+    double calcDistance(Planet p) {
+        return Math.sqrt(Math.pow(myXPos-p.myXPos, 2) + Math.pow(myYPos-p.myYPos, 2));
+    }
 
+    double calcForceExertedBy(Planet pp) {
+
+    }
 }
