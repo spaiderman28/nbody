@@ -1,4 +1,43 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
 public class NBody {
+
+    public static double readRadius(String fname) {
+        try {
+            Scanner scan = new Scanner(new File(fname));
+            int numPlanets = scan.nextInt();
+            double value = scan.nextDouble();
+
+            scan.close();
+            return value;   // must return a double here
+        } catch (FileNotFoundException e) {
+            System.out.println("ur a monkey");
+            System.exit(1);
+            return -1;
+        }
+    }
+
+    public static Planet[] readPlanets(String fname) {
+        try {
+            Scanner scan = new Scanner(new File(fname));
+            int numPlanets = scan.nextInt();
+            double value = scan.nextDouble();
+            Planet[] planets = new Planet[numPlanets];
+            for (int i = 0; i < numPlanets; ++i) {
+
+                planets[i] = scan.next();
+            }
+
+            scan.close();
+            return value;   // must return a double here
+        } catch (FileNotFoundException e) {
+            System.out.println("ur a monkey");
+            System.exit(1);
+            return -1;
+        }
+    }
 
     public static void main(String[] args) {
         double totalTime = 157788000.0;
